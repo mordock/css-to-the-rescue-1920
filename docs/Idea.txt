@@ -1,0 +1,7 @@
+2 colors
+5 kb css
+dark-mode
+
+marvel themed restaurant with minimalist art. 
+Different items will be presented by different heroes, each their own simple theme. Iron man shoot a laser, hulk stomps on the item etc. 
+Heroes will be made from simple shapes and custom line shapes. 
