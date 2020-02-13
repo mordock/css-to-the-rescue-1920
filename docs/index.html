@@ -10,30 +10,59 @@
 </head>
 <body>
   <header>
-    <svg width="100%", height="80">
-      <rect width="100%", height="100%" style="fill:rgba(0,255,0, .7);stroke-width:5;stroke:rgba(0,255,0, .5)"></rect>
-      
-      <text x="20" y="60%" font-family="Verdana" font-size="35" fill="blue">Menu</text>
-
-    </svg>
+    <div>
+      <h1>Menu</h1>
+    </div>
   </header>
 
     <div>
-
-      <div class="flex-container iron man" width="100%", height="500">
-        <img class="fries" src="img/fries.jpg" height="200px" width="300px"></image> 
-        <img class="iron" src="img/IronManMask.png" height="50px" width="50px"></image>
-
+      <div class="flex-container-hor ironman" width="100%", height="500">
+        <img src="img/IronManImage.png" height="200px" width="300px"></image>
+        <img class="fries" src="img/fries_new.jpg" height="200px" width="300px"></image> 
+        <!--<img class="ironicon" src="img/IronManMask.png" height="50px" width="50px"></image>-->
+        <div class="flex-container-ver prize-right">
+          <p id="IronPrize"><span style="color: blue">Prize:</span> 3.00</p>
+          <button>
+            <a href="#SpiderPrize">Get prize</a>
+          </button>
+          <p>Poef</p>
+        </div>
       </div>
 
-      <div class="flex-container hulk" width="100%", height="500">
-        <img class="burger" src="img/hamburger.jpg"  height="200px" width="300px"></image> 
-
+      <div class="flex-container-hor hulk" width="100%", height="500">
+        <div class="flex-container-ver prize-left">
+          <p id="HulkPrize"><span style="color:blue">Prize:</span> 7.50</p>
+          <button>
+            <a href="#ThorPrize">Get prize</a>
+          </button>
+          <p>Poef</p>
+        </div>
+        <img class="burger" src="img/hamburger_new.jpg"  height="200px" width="300px"></image> 
+        <img src="img/hulkImage.png" height="200" width="250"></image>
       </div>
 
-      <div class="flex-container" width="100%", height="500">
-        <rect width="100%", height="100%"></rect>
-        <img src="img/hamburger.jpg"  height="200px" width="300px"></image> 
+      <div class="flex-container-hor thor" width="100%", height="500">
+        <img src="img/thorImage.png" height="200" width="250"></image>
+        <img class="beer" src="img/beer.jpg"  height="200px" width="300px"></image>
+        <div class="flex-container-ver prize-right">
+          <p id="ThorPrize"><span style="color: blue;">Prize:</span> 3.00</p>
+          <button>
+            <a href="#IronPrize">Get prize</a>
+          </button>
+          <p>Poef</p>
+        </div> 
+      </div>
+
+      <div class="flex-container-hor spider" width="100%", height="500">
+        <div class="flex-container-ver prize-left">
+          <p id="SpiderPrize"><span style="color: blue;">Prize:</span> 5.00</p>
+          <button>
+            <a href="#HulkPrize">Get prize</a>
+          </button>
+          <p>Poef</p>
+        </div>
+        <img class="chicken" src="img/chicken.png"  height="200px" width="300px"></image>
+        <img src="img/spiderman.png" height="200" width="250px"></image>
       </div>
     </div>
   </main>

@@ -1,71 +1,120 @@
-:root{
-  --color-green: green;
-  --color-blue: blue;
-}
 /*ID's*/
+:target{
+  color: blue;
+}
 
 /*classes*/
-.flex-container{
+.flex-container-hor{
   display: grid;
-  grid-template-columns: 33% auto auto;
-  grid-template-rows: auto ;
+  grid-template-columns: 33% 300px auto;
+  grid-template-rows: auto;
 }
-
-.burger{
-  grid-column-start: 2;
+.flex-container-ver{
+  display: grid;
+  grid-template-rows: auto;
+  justify-self: end;
 }
 .burger:hover{
   animation: burgerAni .32s linear 1;
   animation-play-state: running;
 }
-.fries{
-  grid-column-start: 2;
-}
 .fries:hover{
   animation: friesAni 1.1s linear 1;
   animation-play-state: running;
 }
-.iron{
+.ironicon{
   grid-column-start: 3;
-  justify-self: end;
+  justify-self: start;
 }
+/* credits tim voor selector*/
+.thor, .thor *{cursor: url("/docs/img/thor_cursor.png"), auto;}
+.ironman, .ironman * {cursor: url("/docs/img/iron_cursor.png"), auto;}
+.spider, .spider *{cursor: url("/docs/img/spider_cursor.png"), auto;}
+.hulk, .hulk *{cursor: url("/docs/img/hulk_cursor.png"), auto;}
+
 .hulk{
+  background-color: green;
+}
+.beer:hover{
+  animation: beerAni 1s linear 1;
+  animation-play-state: running;
+}
+.prize-left{
+  justify-self: end;
+  background-color: rgba( 0, 0, 255, .5);
+}
+.prize-right{
+  justify-self: start;
+  background-color: rgba( 0, 0, 255, .5);
+}
+.chicken:hover{
+  animation: chickenScale 5s linear 1;
+  animation-play-state: running;
+}
+.spider{
   background-color: green;
 }
 /*elements*/
 div{
   background-color: rgba( 0, 0, 255, .45);
-  padding: 5px;
-}
-header{
-  background-color: rgba(0, green, 0, .4);
+  padding: 6px;
+  border-radius: 20px;
 }
 p{
-  color: rgba( 0, 0, 255, 1);}
+  color: rgba( 0, 0, 255, 1);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 body{
-  background-color:  rgba( 0, 255, 0, .0001);;
+  background-color:  rgba( 0, 255, 0, .0001);; 
+}
+h1{
+  color: green;
+}
+div p{
+  color: green;
+  background-color: green;
+  border-radius: 15px;
+  padding: 12px;
+}
+button{
+  border-radius: 15px;
+  background-color: rgba( 0, 255, 255, 1);
+}
+a{
+  text-decoration: none;
+  font-weight: bold;
 }
 /*animations*/
 @keyframes burgerAni {
-  25% {transform: scale(50%)}
-  50% {transform: scale(115%)}
-  75% {transform: scale(77%)}  
+  25% {transform: scale(45%)}
+  50% {transform: scale(150%)}
+  75% {transform: scale(65%)}  
 }
 @keyframes friesAni {
-  30% {
-    transform: scale(110%);
-    transform: translateX(50%);
+  30% {transform: translateX(50%) scale(1.15)}
+  60% {transform: translateX(55%) scale(1.35)}
+  80% {transform: translateX(-20%) scale(1.0)}
+  100% {transform: translateX(0%) scale(1.0)}
+} 
+@keyframes beerAni {
+  5% {transform: translateX(20%)}
+  10% {transform: translateX(-30%)}
+  15% {transform: translateX(30%)}
+  20% {transform: translateX(-40%)}
+  25% {transform: translateX(45%)}
+  40% {transform: translateX(-65%)} 
+  60% {transform: translateX(45%)} 
+  80% {transform: translateX(-30%)} 
+  100% {transform: translateX(30%)}   
+}
+@keyframes chickenScale{
+  0%{
+    transform: scale(1.0) rotateZ(0deg) translateY(50%);
   }
-  60% {
-    transform: scale(115%);
-    transform: translateX(55%);
+  3%{
+    transform: scale(4.0) rotateZ(240deg);
   }
-  80% {
-    transform: scale(115%);
-    transform: translateX(-20%);
-  }
-  100% {
-    transform: scale(115%);
-    transform: translateX(0%);
+  100%{
+    transform: scale(4.0) rotateZ(240deg);
   }
 }
