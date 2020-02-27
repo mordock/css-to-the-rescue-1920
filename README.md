@@ -2,6 +2,8 @@
 
 [Rubric](https://docs.google.com/spreadsheets/d/1Xv48MSiACNmnM6nXpGGUb8mJDC459uSaxJszO_zLEp8/edit?usp=sharing)
 
+![alt text](https://github.com/mordock/css-to-the-rescue-1920/blob/master/docs/img/Screenshot_1.png)
+
 ## description
 This is a messy marvel themed fastfood menu. It has has some fun animations for each of the characters, and the possibility to see the price of products(not guaranteed)
 
