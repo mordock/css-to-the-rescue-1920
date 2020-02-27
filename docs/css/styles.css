@@ -1,30 +1,71 @@
-/*ID's*/
-:target{
-  color: blue;
+:root{
+  --background-color: white;
+  --blue05: rgba( 0, 0, 255, .5);
+  --blue1: blue;
+  --green1: green;
+  --light-blue: rgba( 0, 255, 255, 1);
+  --filterInvert: 0;
+  --animationTime: 3s;
 }
-
-/*classes*/
+@media (prefers-color-scheme: dark) {
+  :root{
+    --background-color: black;
+    --blue05: rgba(0, 255, 0, .5);
+    --blue1: green;
+    --green1: blue;
+    --filterInvert: 1;
+    --light-blue: black;
+    --animationTime: 3s;
+  }
+}
+/*ID's */
+#SpiderPrize:target{color: var(--blue1);}
+#ThorPrize:target{color: var(--blue1);}
+#IronPrize:target{color: var(--blue1);}
+#HulkPrize:target{color: var(--blue1);}
+/*classes  calc gebruiken*/
 .flex-container-hor{
   display: grid;
-  grid-template-columns: 33% 300px auto;
+  grid-template-columns: calc(100% / 3) 300px auto;
   grid-template-rows: auto;
+  width: 100%;
+  animation: animateBlue 2s linear infinite;
+  animation-play-state: running;
+}
+.blue{
+  animation: animateBlue var(--animationTime) linear infinite;
+  animation-play-state: running;
+}
+.green{
+  animation: animateGreen var(--animationTime) linear infinite;
+  animation-play-state: running;
 }
 .flex-container-ver{
   display: grid;
   grid-template-rows: auto;
   justify-self: end;
 }
+.burger:hover + embed{
+  will-change: transform;
+  animation: burgerAni .32s linear 1;
+  animation-play-state: running;
+  display: block;
+}
 .burger:hover{
+  will-change: transform;
   animation: burgerAni .32s linear 1;
   animation-play-state: running;
 }
 .fries:hover{
+  will-change: transform;
   animation: friesAni 1.1s linear 1;
   animation-play-state: running;
 }
-.ironicon{
-  grid-column-start: 3;
-  justify-self: start;
+.fries:hover + embed{
+  will-change: transform;
+  animation: friesAni 1.1s linear 1;
+  animation-play-state: running;
+  display: block;
 }
 /* credits tim voor selector*/
 .thor, .thor *{cursor: url("/docs/img/thor_cursor.png"), auto;}
@@ -33,62 +74,93 @@
 .hulk, .hulk *{cursor: url("/docs/img/hulk_cursor.png"), auto;}
 
 .hulk{
-  background-color: green;
+  background-color: var(--green1);
 }
 .beer:hover{
+  will-change: transform;
   animation: beerAni 1s linear 1;
   animation-play-state: running;
 }
+.beer:hover + embed{
+  will-change: transform;
+  animation: beerAni 1s linear 1;
+  animation-play-state: running;
+  display: block;
+}
 .prize-left{
   justify-self: end;
-  background-color: rgba( 0, 0, 255, .5);
+  background-color: var(--blue05);
 }
 .prize-right{
   justify-self: start;
-  background-color: rgba( 0, 0, 255, .5);
+  background-color: var(--blue05);
 }
 .chicken:hover{
+  will-change: transform;
   animation: chickenScale 5s linear 1;
   animation-play-state: running;
 }
 .spider{
-  background-color: green;
+  background-color: var(--green1);
+}
+.middle{
+  height: 200px;
+  width: 300px;
+  box-shadow: 0px 0px 7px;
 }
 /*elements*/
+embed{
+  position: absolute;
+  top: -1000in;
+  left: -1000in;
+  display: none;
+}
+span{
+  color: var(--blue1);
+}
+header{
+  text-shadow: 100px 0px 1px var(--blue1), 200px 0px 2px var(--blue1), 300px 0px 3px var(--blue1), 400px 0px 4px var(--blue1), 500px 0px 5px var(--blue1), 600px 0px 6px var(--blue1), 700px 0px 7px var(--blue1), 800px 0px 8px var(--blue1), 900px 0px 9px var(--blue1), 1000px 0px 10px var(--blue1);
+}
 div{
-  background-color: rgba( 0, 0, 255, .45);
+  background-color: var(--blue05);
   padding: 6px;
   border-radius: 20px;
 }
 p{
-  color: rgba( 0, 0, 255, 1);
+  color: var(--blue1);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-body{
-  background-color:  rgba( 0, 255, 0, .0001);; 
-}
 h1{
-  color: green;
+  color: var(--green1);
 }
 div p{
-  color: green;
-  background-color: green;
+  color: var(--green1);
+  background-color: var(--green1);
   border-radius: 15px;
   padding: 12px;
 }
 button{
   border-radius: 15px;
-  background-color: rgba( 0, 255, 255, 1);
+  background-color: var(--light-blue);
 }
 a{
   text-decoration: none;
   font-weight: bold;
 }
+a:focus{
+  background-color: var(--blue1);
+}
+body{
+  background-color: var(--background-color);
+}
+img{
+  filter: invert(var(--filterInvert));
+}
 /*animations*/
 @keyframes burgerAni {
-  25% {transform: scale(45%)}
-  50% {transform: scale(150%)}
-  75% {transform: scale(65%)}  
+  25% {transform: scale(0.45)}
+  50% {transform: scale(1.5)}
+  75% {transform: scale(0.65)}  
 }
 @keyframes friesAni {
   30% {transform: translateX(50%) scale(1.15)}
@@ -108,13 +180,17 @@ a{
   100% {transform: translateX(30%)}   
 }
 @keyframes chickenScale{
-  0%{
-    transform: scale(1.0) rotateZ(0deg) translateY(50%);
-  }
-  3%{
-    transform: scale(4.0) rotateZ(240deg);
-  }
-  100%{
-    transform: scale(4.0) rotateZ(240deg);
-  }
+  0%{transform: scale(1.0) rotateZ(0deg) }
+  3%{transform: scale(4.0) rotateZ(240deg) translateY(40%);}
+  100%{transform: scale(4.0) rotateZ(240deg) translateY(40%);}
+}
+@keyframes animateBlue{
+  0%{background-color: var(--blue1)}
+  50%{background-color: var(--green1)}
+  100%{background-color: var(--blue1)}
+}
+@keyframes animateGreen{
+  0%{background-color: var(--green1)}
+  50%{background-color: var(--blue1)}
+  100%{background-color: var(--green1)}
 }
