@@ -23,3 +23,9 @@ Experiment with more colors
 Experiment with more layout options  
 Add more foods/heroes
 Add more animations to background
+
+## old experiments
+I wanted to add sounds with the animations, but I didn't get that to work. Here are some images:  
+![alt text](https://github.com/mordock/css-to-the-rescue-1920/blob/master/docs/img/sounds.png)  
+![alt text](https://github.com/mordock/css-to-the-rescue-1920/blob/master/docs/img/sounds_01.png)  
+
