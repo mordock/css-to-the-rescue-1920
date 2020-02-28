@@ -23,6 +23,7 @@ less than 5kb CSS
 I want to learn to animate things  
 I want to add ad different color mode  
 I want to learn how to use flexbox  
+I want to learn how to use custom cursors  
 
 ## wishlist
 Experiment with more colors  
