@@ -18,6 +18,12 @@ less than 5kb CSS
 <!-- ...but how does one use this project? What are its features 🤔 -->
 
 <!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
+
+## learning goals
+I want to learn to animate things
+I want to add ad different color mode
+I want to learn how to use flexbox
+
 ## wishlist
 Experiment with more colors  
 Experiment with more layout options  
