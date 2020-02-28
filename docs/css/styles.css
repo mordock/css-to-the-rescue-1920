@@ -76,6 +76,7 @@
 .prize-right{
   justify-self: start;
   background-color: var(--blue05);
+  height: 200px;
 }
 .chicken:hover{
   will-change: transform;
@@ -91,6 +92,14 @@
   box-shadow: 0px 0px 7px;
 }
 /*elements*/
+a:first-of-type{
+  text-decoration: none;
+  font-weight: bold;
+}
+a:first-of-type:focus{
+  background-color: var(--blue1);
+
+}
 span{
   color: var(--blue1);
 }
@@ -101,10 +110,6 @@ div{
   background-color: var(--blue05);
   padding: 6px;
   border-radius: 20px;
-}
-p{
-  color: var(--blue1);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 h1{
   color: var(--green1);
@@ -119,15 +124,10 @@ button{
   border-radius: 15px;
   background-color: var(--light-blue);
 }
-a{
-  text-decoration: none;
-  font-weight: bold;
-}
-a:focus{
-  background-color: var(--blue1);
-}
 body{
   background-color: var(--background-color);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }
 img{
   filter: invert(var(--filterInvert));
