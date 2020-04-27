@@ -4,7 +4,6 @@
   --blue1: blue;
   --green1: green;
   --light-blue: rgba( 0, 255, 255, 1);
-  --filterInvert: 0;
   --animationTime: 3s;
 }
 @media (prefers-color-scheme: dark) {
@@ -19,16 +18,32 @@
   }
 }
 /*ID's */
-#SpiderPrize:target{color: var(--blue1);}
-#ThorPrize:target{color: var(--blue1);}
-#IronPrize:target{color: var(--blue1);}
-#HulkPrize:target{color: var(--blue1);}
+#SpiderPrize:target{
+  color: var(--blue1);
+  animation: textFeedback 1s linear 1;
+  animation-play-state: running;
+}
+#ThorPrize:target{
+  color: var(--blue1);
+  animation: textFeedback 1s linear 1;
+  animation-play-state: running;
+}
+#IronPrize:target{
+  color: var(--blue1);
+  animation: textFeedback 1s linear 1;
+  animation-play-state: running;
+}
+#HulkPrize:target{
+  color: var(--blue1);
+  animation: textFeedback 1s linear 1;
+  animation-play-state: running;
+}
 /*classes */
-.flex-container-hor{
+.grid{
   display: grid;
-  grid-template-columns: 20% auto 10% 15% 10% auto 20%;
-  grid-template-rows: auto;
+  grid-template-columns: 15% auto 10% 15% 10% auto 15%;
   width: 100%;
+  height: 200px;
 }
 .blue{
   animation: animateBlue var(--animationTime) linear infinite;
@@ -45,11 +60,6 @@
   grid-column-end: 4;
   box-shadow: 0px 0px 7px;
 }
-.flex-container-ver{
-  display: grid;
-  grid-template-rows: auto;
-  justify-self: end;
-}
 .burger:hover{
   will-change: transform;
   animation: burgerAni .32s linear 1;
@@ -61,15 +71,17 @@
   animation-play-state: running;
 }
 .left{
-  height: 200px;
-  width: 300px;
+  height: 100%;
+  width: 100%;
+  min-width: 120px;
   grid-column-start: 1;
   grid-column-end: 1;
+  justify-self: start;
 }
-
 .right{
-  height: 200px;
-  width: 300px;
+  height: 100%;
+  width: 100%;
+  min-width: 120px;
   grid-column-start: 7;
   grid-column-end: 7;
   justify-self: end;
@@ -80,24 +92,25 @@
 .spider, .spider *{cursor: url("/docs/img/spider_cursor.png"), auto;}
 .hulk, .hulk *{cursor: url("/docs/img/hulk_cursor.png"), auto;}
 
-.hulk{
-  background-color: var(--green1);
-}
 .beer:hover{
   will-change: transform;
   animation: beerAni 1s linear 1;
   animation-play-state: running;
 }
 .prize-left{
+  display: grid;
+  grid-template-rows: auto;
+  z-index: 100;
   justify-self: end;
   background-color: var(--blue05);
   grid-column-start: 3;
   grid-column-end: 3;
 }
 .prize-right{
+  display: grid;
+  grid-template-rows: auto;
   justify-self: start;
   background-color: var(--blue05);
-  height: 200px;
   grid-column-start: 5;
   grid-column-end: 5;
 }
@@ -106,22 +119,19 @@
   animation: chickenScale 5s linear 1;
   animation-play-state: running;
 }
-.spider{
-  background-color: var(--green1);
-}
 
 /*elements*/
+p:nth-child(3){
+  text-align: center;
+  text-decoration: underline;
+}
+
 a:first-of-type{
   text-decoration: none;
   font-weight: bold;
 }
-a:first-of-type:focus{
-  background-color: var(--blue1);
-
-}
-span{
-  color: var(--blue1);
-}
+a:first-of-type:focus{background-color: var(--blue1);}
+span{color: var(--blue1);}
 header{
   text-shadow: 100px 0px 1px var(--blue1), 200px 0px 2px var(--blue1), 300px 0px 3px var(--blue1), 400px 0px 4px var(--blue1), 500px 0px 5px var(--blue1), 600px 0px 6px var(--blue1), 700px 0px 7px var(--blue1), 800px 0px 8px var(--blue1), 900px 0px 9px var(--blue1), 1000px 0px 10px var(--blue1);
 }
@@ -130,9 +140,7 @@ div{
   padding: 6px;
   border-radius: 20px;
 }
-h1{
-  color: var(--green1);
-}
+h1{color: var(--green1);}
 div p{
   color: var(--green1);
   background-color: var(--green1);
@@ -146,10 +154,6 @@ button{
 body{
   background-color: var(--background-color);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-}
-img{
-  filter: invert(var(--filterInvert));
 }
 /*animations*/
 @keyframes burgerAni {
@@ -188,4 +192,10 @@ img{
   0%{background-color: var(--green1)}
   50%{background-color: var(--blue1)}
   100%{background-color: var(--green1)}
+}
+@keyframes textFeedback{
+  0%{transform: scale(1.0);}
+  40%{transform: scale(5.0) rotateZ(360deg);}
+  60%{transform: scale(5.0) rotateZ(360deg);}
+  100%{transform: scale(1.0);}
 }
